@@ -1,0 +1,16 @@
+<div class="noticias-grid">
+    <div class="noticia" *ngFor="let noticia of noticias">
+      <img [src]="noticia.imagen" alt="Imagen noticia" (click)="openImage(noticia.imagen)" />
+      <h3>{{ noticia.titulo }}</h3>
+      <p>{{ noticia.descripcion }}</p>
+    </div>
+  </div>
+  
+  <!-- Modal para imagen ampliada -->
+  <div class="modal-backdrop" *ngIf="selectedImage" (click)="closeImage()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <img [src]="selectedImage" alt="Imagen ampliada" />
+      <button class="close-btn" (click)="closeImage()">Cerrar</button>
+    </div>
+  </div>
+  

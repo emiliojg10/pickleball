@@ -1,0 +1,46 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav class="sidenav" mode="over" [fixedInViewport]="true">
+    <nav class="mobile-nav">
+      <a routerLink="/disponibilidad" (click)="sidenav.close()">Disponibilidad</a>
+      <a routerLink="/noticias" (click)="sidenav.close()">Noticias y Actualidad</a>
+      <a routerLink="/info" (click)="sidenav.close()">Información sobre nosotros</a>
+      <a routerLink="/patrocinadores" (click)="sidenav.close()">Patrocinadores</a>
+      <a *ngIf="!user()" routerLink="/login" (click)="sidenav.close()">Login</a>
+      <div *ngIf="user()" class="user-info-mobile">
+        <span>{{ user()?.email }}</span>
+        <button (click)="logout(); sidenav.close()">Cerrar sesión</button>
+      </div>
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <header class="toolbar">
+      <div class="nav-container">
+        <button class="menu-btn" mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <a routerLink="/portada" class="logo-link">
+          <img src="assets/logoaextpb.jpg" alt="Logo AEXTPB" class="logo" />
+        </a>
+
+        <nav class="nav-bar">
+          <a routerLink="/disponibilidad">Disponibilidad</a>
+          <a routerLink="/noticias">Noticias y Actualidad</a>
+          <a routerLink="/info">Información sobre nosotros</a>
+          <a routerLink="/patrocinadores">Patrocinadores</a>
+          <a *ngIf="!user()" routerLink="/login">Login</a>
+        </nav>
+
+        <div *ngIf="user()" class="user-info">
+          <span>{{ user()?.email }}</span>
+          <button (click)="logout()">Cerrar sesión</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

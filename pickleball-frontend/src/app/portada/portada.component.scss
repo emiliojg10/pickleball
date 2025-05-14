@@ -1,0 +1,117 @@
+.portada {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  
+    section {
+      margin-bottom: 40px;
+    }
+  
+    .bienvenida {
+      text-align: center;
+  
+      h1 {
+        font-size: 2.5rem;
+        color: #4a731f;
+      }
+  
+      .cta-button {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #4a731f;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+      }
+  
+      .cta-button:hover {
+        background-color: #395a16;
+      }
+    }
+  
+    .disponibilidad-preview {
+      background-color: #f1f8ed;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+  
+      a {
+        color: #4a731f;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  
+    .ultimas-noticias {
+      .noticias-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+  
+      .noticia {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+  
+        img {
+          width: 100%;
+          border-radius: 8px;
+          margin-bottom: 10px;
+          height: 160px;
+          object-fit: cover;
+        }
+  
+        h3 {
+          font-size: 1.1rem;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  
+    .resumen-info,
+    .preview-patrocinadores {
+      text-align: center;
+  
+      .ver-mas {
+        display: inline-block;
+        margin-top: 10px;
+        color: #4a731f;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  
+    .patro-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 15px;
+  
+      .patro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+  
+        img {
+          max-width: 120px;
+          height: auto;
+          margin-bottom: 5px;
+          border-radius: 4px;
+        }
+  
+        p {
+          margin: 0;
+          font-size: 0.9rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+  
