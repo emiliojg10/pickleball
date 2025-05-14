@@ -1,0 +1,35 @@
+# === BACKEND (FastAPI) ===
+__pycache__/
+*.py[cod]
+*.sqlite3
+.env
+.env.*
+
+# Firebase credentials
+credentials/
+*.json
+
+# Logs
+*.log
+
+# === FRONTEND (Angular) ===
+/pickleball-frontend/dist
+/pickleball-frontend/tmp
+/pickleball-frontend/out-tsc
+/pickleball-frontend/node_modules
+
+# Angular cache
+/pickleball-frontend/.angular/cache
+
+# IDEs and editors
+**/.idea/
+**/.vscode/
+**/.history/
+*.sublime-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.bak
