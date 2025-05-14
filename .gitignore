@@ -33,3 +33,7 @@ Thumbs.db
 
 # Misc
 *.bak
+
+# Ignore environment config
+/src/environments/environment.ts
+/src/environments/environment.prod.ts
