@@ -1,0 +1,32 @@
+<div class="auth-container">
+  <div class="auth-box">
+    <h2>{{ isRegistering ? 'Registrarse' : 'Iniciar sesión' }}</h2>
+
+    <form (ngSubmit)="onSubmit()">
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Correo electrónico" required />
+
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required />
+
+      <input *ngIf="isRegistering"
+             type="password"
+             [(ngModel)]="confirmPassword"
+             name="confirmPassword"
+             placeholder="Confirmar contraseña"
+             required />
+
+      <button type="submit">{{ isRegistering ? 'Registrarse' : 'Entrar' }}</button>
+    </form>
+
+    <button class="google-button" (click)="loginWithGoogle()">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
+      Continuar con Google
+    </button>
+
+    <p class="toggle-link">
+      {{ isRegistering ? '¿Ya tienes cuenta?' : '¿No tienes cuenta?' }}
+      <a href="javascript:void(0)" (click)="toggleMode()">
+        {{ isRegistering ? 'Inicia sesión' : 'Regístrate' }}
+      </a>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="portada">
+    <section class="bienvenida">
+      <h1>Bienvenido a la AEXTPB</h1>
+      <p>Descubre el Pickleball en Extremadura y forma parte de nuestra comunidad.</p>
+      <a routerLink="/login" class="cta-button">Únete Ahora</a>
+    </section>
+  
+    <section class="disponibilidad-preview">
+      <h2>¿Qué pistas están libres?</h2>
+      <p>Consulta en tiempo real la <a routerLink="/disponibilidad">disponibilidad de pistas</a>.</p>
+    </section>
+  
+    <section class="ultimas-noticias">
+      <h2>Últimas noticias</h2>
+      <div class="noticias-grid">
+        <div *ngFor="let noticia of noticias" class="noticia">
+          <img [src]="noticia.imagen" [alt]="noticia.titulo" />
+          <h3>{{ noticia.titulo }}</h3>
+          <p>{{ noticia.descripcion }}</p>
+        </div>
+      </div>
+      <a routerLink="/noticias" class="ver-mas">Ver todas las noticias</a>
+    </section>
+  
+    <section class="resumen-info">
+      <h2>Sobre nosotros</h2>
+      <p>Somos la Asociación Extremeña de Pickleball, fomentando este deporte en toda la región con actividades, jornadas abiertas y formación en centros educativos.</p>
+      <a routerLink="/info" class="ver-mas">Conócenos más</a>
+    </section>
+  
+    <section class="preview-patrocinadores">
+      <h2>Gracias a nuestros patrocinadores</h2>
+      <div class="patro-grid">
+        <div *ngFor="let p of patrocinadores" class="patro">
+          <img [src]="p.imagen" [alt]="p.nombre" />
+          <p>{{ p.nombre }}</p>
+        </div>
+      </div>
+      <a routerLink="/patrocinadores" class="ver-mas">Ver todos</a>
+    </section>
+  </div>
+  

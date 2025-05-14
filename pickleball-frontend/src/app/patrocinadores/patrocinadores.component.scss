@@ -1,0 +1,28 @@
+.patrocinadores-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .patrocinador {
+    text-align: center;
+  }
+  
+  .patrocinador img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .patrocinador p {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  

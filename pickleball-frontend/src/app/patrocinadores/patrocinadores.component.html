@@ -1,0 +1,7 @@
+<div class="patrocinadores-container">
+    <div class="patrocinador" *ngFor="let patro of patrocinadores">
+      <img [src]="patro.imagen" [alt]="patro.nombre" />
+      <p>{{ patro.nombre }}</p>
+    </div>
+  </div>
+  

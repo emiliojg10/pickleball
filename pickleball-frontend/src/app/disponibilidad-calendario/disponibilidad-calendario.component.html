@@ -1,0 +1,47 @@
+<div class="calendario-container">
+  <div class="barra-dias">
+    <button
+      *ngFor="let dia of diasDisponibles"
+      [class.seleccionado]="dia.fecha === fechaSeleccionada"
+      (click)="seleccionarFecha(dia.fecha)"
+    >
+      {{ dia.label }}
+    </button>
+  </div>
+
+  <div class="tabla-disponibilidad">
+    <table>
+      <thead>
+        <tr>
+          <th>Hora</th>
+          <th *ngFor="let pista of pistas">{{ pista }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let franja of disponibilidadPistas">
+          <td>{{ franja.hora }}</td>
+          <td
+            *ngFor="let pista of ['pista1', 'pista2', 'pista3', 'pista4']; let i = index"
+            [class.disponible]="franja[pista]"
+            [class.no-disponible]="!franja[pista]"
+            [class.seleccionada]="franjaSeleccionada?.hora === franja.hora && franjaSeleccionada?.pista === 'Pista ' + (i + 1)"
+            (click)="seleccionarFranja(franja.hora, 'Pista ' + (i + 1), franja[pista] === true)"
+          >
+            {{ franja[pista] ? '✔️' : '❌' }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Confirmación antes de reservar -->
+  <div class="confirmacion" *ngIf="mostrarConfirmacion">
+    <p>{{ textoConfirmacion }}</p>
+    <button (click)="confirmarReserva()">Aceptar</button>
+    <button (click)="mostrarConfirmacion = false">Cancelar</button>
+  </div>
+
+  <div class="mensaje" [class.exito]="esReservaExitosa" [class.error]="esReservaExitosa === false">
+    {{ mensajeReserva }}
+  </div>
+</div>
