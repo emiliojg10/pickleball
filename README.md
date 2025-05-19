@@ -101,4 +101,4 @@ Este proyecto es solo con fines educativos.
 
 ## ✍️ Autor
 
-- Emilio Jiménez Gallego — [GitHub](https://github.com/emiliojg10)
+- Emilio Jiménez González — [GitHub](https://github.com/emiliojg10)
